@@ -1,0 +1,73 @@
+Your score: 22/24
+
+**** WELL DONE! ****
+https://www.youtube.com/watch?v=2F2i6EQsPZY
+
+[An edited version of] your code for Problem 1 is going to be 
+the ~*~official solution~*~ to provide wisdom, guidance, and 
+life insights for your classmates and generations to come!
+You're the best around! 
+
+
+Breakdown & Comments: 
+
+----------------------------------------
+Coding Style: 3/4
+----------------------------------------
+1/1: git repo style
+0/1: code style
+1/1: notebook style
+1/1: code portability
+
+Code style --
+Helps to have logic comments written before/above lines of code
+rather than to the side so that the reader encounters the 
+explanation first. Minor descriptive comments (e.g. at time of 
+variable intialization) are fine on the side.
+
+Also, switch to python 3 print formatting:
+print('{:10}  {:15}'.format('Image','(x,y) Offset'))
+
+
+Notebook style -- 
+Look in to using timers rather than using a ton of print statements,
+if you're interested in how long a code is taking to run. Alternatively
+please delete such print statements before turning in the work. Scrolling
+past 100 throw-away lines of output is annoying for readers :) 
+
+----------------------------------------
+Problem 1: 6/6 
+----------------------------------------
+3/3: good attempt of each part
+3/3: successful execution of each part
+
+----------------------------------------
+Problem 2: 7/7
+----------------------------------------
+2/2: good attempt of parts 2 and 5
+5/5: successful completion of parts 1-5
+
+part 2 - technical/mathematical note:
+power spectrum (for finding the "smallest component") is [prop to] y**2fft
+(I think you know this but I'm noting it for consistency in my remarks)
+
+
+----------------------------------------
+Problem 3: 2/2 
+----------------------------------------
+2/2: successful completion of year/lunar estimates
+
+----------------------------------------
+Problem 4: 4/5 
+----------------------------------------
+0/1: understanding what is going on in the plot for part 1
+1/1: good attempt of part 1
+3/3: successful completion of parts 1-3
+
+I can't tell that you are doing the sampling right; it doesn't seem like
+you're even mocking a binomial distribution ... unfortunately your
+commenting on this problem is incomplete
+
+I have no idea how you're getting seemingly-correct answers, but you are
+
+Graded by C. E. Harris
