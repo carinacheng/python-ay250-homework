@@ -1,0 +1,29 @@
+Your score: 15/17
+
+Breakdown & Comments: 
+
+You didn't include any data (PNGs for plot reproduction)
+in your repo?
+
+----------------------------------------
+Problem 1: 4/5
+----------------------------------------
+0/1: plot with caption
+4/4: analysis
+
+No caption :\ 
+
+----------------------------------------
+Problem 2: 6/7
+----------------------------------------
+3/3: Recreated plot
+3/3: New dynamic interactions
+0/1: Analysis of changes
+
+----------------------------------------
+Problem 3: 5/5
+----------------------------------------
+5/5: Reproduced plot: title, twin_x, legend, limits, linestyles
+
+
+Graded by C. E. Harris
