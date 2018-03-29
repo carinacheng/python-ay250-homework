@@ -1,0 +1,19 @@
+To run my final classifier:
+    -Open up the "hw_6_assignment.ipynb" jupyter notebook
+    -Run only the cell under the heading "4) Final Classifier" (at the bottom of the notebook)
+        -Manually edit the "PATH" variable near the top of the code to be the directory with images
+        -It may take a minute to run, depending on how many files it's given 
+        -The code will both print out the predictions and save them in an output file called "predictions.txt"
+
+Notebook layout:
+    1) Load data from the "50_categories" folder 
+    2) Extracts features for all 4244 images (this takes awhile to run)
+    3) Computes optimal random forest model (and saves it out) and finds the 3 most important features
+       Also computes metrics on how well the model works (this can be run independently of all the other cells)
+    4) Final classifier (this can be run independently of all the other cells)
+
+Notes on best 3 features:
+    -Aspect ratio is the best feature I could find. It's so simple, but turns out to be an important one. This makes sense though, as these images probably came from somewhere similar for each class and are therefore similar in sizes.
+    -The second most important feature I have is 'corners,' which essentially detects corners in each image and takes the average (corners found using the Harris corner measure).
+    -The third most important feature is 'segmentation,' which is the sum of all segment detections in an image (segments found using k-means clustering).
+
