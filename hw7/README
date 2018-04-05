@@ -1,3 +1,6 @@
--Homework solutions are contained in "hw_7_assignment.ipynb" - no complicated explanations needed this week!
+-Homework solutions are contained in "hw_7_assignment.ipynb" 
+
+-Note that most of the code in Problem #2 (Panorama Stitching) comes from a tutorial in scikit-image (https://github.com/scikit-image/skimage-tutorials/blob/master/lectures/solutions/adv3_panorama-stitching-solution.ipynb)
+    -I added additional heavy commenting for personal understanding of what's going on
 
 
