@@ -1,6 +1,7 @@
 -Homework solutions are contained in "hw_7_assignment.ipynb" 
 
--Note that most of the code in Problem #2 (Panorama Stitching) comes from a tutorial in scikit-image (https://github.com/scikit-image/skimage-tutorials/blob/master/lectures/solutions/adv3_panorama-stitching-solution.ipynb)
-    -I added additional heavy commenting for personal understanding of what's going on
+-Most of the code in Problem #2 (Panorama Stitching) comes from the tutorial in scikit-image (https://github.com/scikit-image/skimage-tutorials/blob/master/lectures/solutions/adv3_panorama-stitching-solution.ipynb)
+    -I added additional commenting for personal understanding of what's going on
+    -I ended up stitching together 3 photos randomly taken a few years ago - they weren't taken with the intention of having overlap but worked out in making a decent panorama. There wasn't that much overlap between the middle & right panels though (and the photos may have been taken from slightly different locations), which is why Table Mountain seems to be split in the middle in the combined image.
 
 
