@@ -1,0 +1,24 @@
+<!--- Base template which contains the links at the top of the page--->
+
+<html>
+    <body>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+        $(function() {
+                $( ".dtpick" ).datepicker();
+        });
+        </script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+        <div class="button">
+            <a href="{{ url_for('index') }}" style="display:inline-block; margin-right:5px;">HOME</a>
+            <a href="instructions" style="display:inline-block;">INSTRUCTIONS</a>
+        </div>
+        <hr>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
+
+

@@ -1,0 +1,47 @@
+table, th, td {
+border: 1px solid black;
+padding: 10px;
+border-collapse: collapse;
+text-align: left;
+font-family: arial;
+}
+
+a:link{
+color: black;
+font-family: arial;
+}
+
+a:visited{
+color: blue;
+}
+
+a:hover{
+color: purple;
+}
+
+p {
+font-family: arial;
+}
+
+h1 {
+font-family: arial;
+}
+
+h2 {
+font-family: arial;
+}
+
+.button {
+font-size:20px;
+color: black;
+background: #808080;
+box-shadow: #808080;
+padding: 15px;
+}
+
+li {
+font-family: arial;
+}
+
+
+

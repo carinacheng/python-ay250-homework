@@ -1,0 +1,74 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+    <!--- Main Headings --->
+    <head>
+        <h1> Lab Friday Lunch Sign-Up</h1>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    </head>
+    <body>
+        <h2>Please sign up to host a lab Friday lunch here:</h2>
+    </body>
+
+    <!--- Sign-Up Form --->
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}
+            {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+            {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.date.label }}<br>
+            {{ form.date(class="dtpick") }}
+            {% for error in form.date.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p> {{ form.submit }} </p>
+    </form>
+
+    <!--- Flash Message --->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!--- Table --->
+    <br/>
+    <body>
+        <h2> List of lunch-hosters:</h2>
+    </body>
+    <table border=1 width=40%>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+        </tr>
+        {% for item in items|sort(attribute='date',reverse=True) %} <!--- sort by date --->
+        <tr>
+            <td>{{item.name}}</td>
+            {% if item.flag %}
+                <td>{{item.date}} &#160 &#160 <font color=#66CD00>&#8592 upcoming</font></td> <!--- 2spaces,arrow, text --->
+            {% else %}
+                <td>{{item.date}}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+<br/><br/>
+{% endblock %} 
