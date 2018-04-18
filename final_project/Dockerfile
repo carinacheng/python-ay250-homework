@@ -25,5 +25,5 @@ ENV FLASK_APP labfriday.py
 RUN chown -R labfriday:labfriday ./
 USER labfriday
 
-EXPOSE 5000
+EXPOSE 8080
 ENTRYPOINT ["./boot.sh"]
