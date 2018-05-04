@@ -32,7 +32,7 @@ font-family: arial;
 }
 
 .button {
-font-size:20px;
+font-size: 20px;
 color: black;
 background: #808080;
 box-shadow: #808080;
@@ -41,6 +41,16 @@ padding: 15px;
 
 li {
 font-family: arial;
+}
+
+.columnleft {
+    float: left;
+    width: 60%;
+}
+
+.columnright{
+    float: right;
+    width: 40%;
 }
 
 
