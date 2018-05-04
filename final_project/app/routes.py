@@ -32,7 +32,11 @@ def parse_db(db):
         diffs = np.ma.masked_where(diffs < 0, diffs) # mask negative differences (i.e. ignore previous dates)
         if diffs.mask.all() == False: # if there exists a future date 
             ind = np.argmin(diffs) # index of minimum difference - this is the closest upcoming date 
+            date = items[ind]['date'] # date that's the closest to now
+            date_signup = datetime.date(int(date.split('/')[2]), int(date.split('/')[0]), int(date.split('/')[1])) # in datetime format
             items[ind]['flag'] = True # set flag to True to mark this upcoming date
+            if date_signup == now: # if same day, check if it's past noon or not
+                if datetime.datetime.now().time().hour >= 12: items[ind]['flag'] = False # it's after noon
     return items
 
 
@@ -52,7 +56,6 @@ def parse_counts(items):
             counts[name] += 1 # increase count
         else: counts[name] = 1 # if newcomer isn't in the original list, add them and give a count of 1
     counts = collections.OrderedDict(sorted(counts.items())) # order alphabetically
-    for name in counts: counts[name] = str(counts[name]) # convert integers into strings
     return counts
 
 
