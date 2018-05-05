@@ -53,17 +53,27 @@ def parse_counts(items):
     for name in names: counts[name] = 0 # make dictionary where everyone has a count of 0
     for name in names_in_db: # loop through database entries and match them to the table
         name_entry = name.split(' ') # split up name into first and last, if entered that way
-        ns = [] # will hold standardized formatting of name 
-        for n in name_entry: # loop over first and last name
-            n = n.lower() # all lower-case
-            n = n.title() # capitalize first letter
-            ns.append(n)
-        ' '.join(ns) # join first and last names back together
-        if name in names: # if the name is already in the counts dictionary XXX names have to match exactly (first name, space, last name)
+        if name in names: # if the name is already in the counts dictionary XXX names have to match exactly 
             counts[name] += 1 # increase count
         else: counts[name] = 1 # if newcomer isn't in the original list, add them and give a count of 1
     counts = collections.OrderedDict(sorted(counts.items())) # order alphabetically
     return counts
+
+
+def format_name(name):
+    """
+    Formats a user-entered name (assuming first and last, separated by a space) in the same standardized way.
+    Input: name entry
+    Output: name entry with all lower-case except for first letters
+    """
+    name_entry = name.split(' ') # split first and last name
+    ns = [] 
+    for n in name_entry:
+        n = n.lower() # all lower-case
+        n = n.title() # capitalize first letter
+        ns.append(n)
+    name = ' '.join(ns) # join first and last names back together
+    return name
 
 
 # Main webpage
@@ -74,14 +84,14 @@ def index():
     items = parse_db(db) # database information
     counts = parse_counts(items) # count information
     if form.validate_on_submit(): # add user to database
-        info = User(name=str(form.name.data), email=str(form.email.data), date=form.date.data.strftime("%m/%d/%Y"))
+        info = User(name=format_name(str(form.name.data)), email=str(form.email.data), date=form.date.data.strftime("%m/%d/%Y"))
         dates = [user.date for user in User.query.all()] # dates already in database
         if info.date in dates: # date already claimed
             flash('This date is already claimed. Please pick another date.') # flash message
             return redirect(url_for('index'))
         db.session.add(info)
         db.session.commit() # add information that's submitted into database
-        flash('{}, you are now signed-up to provide lab Friday lunch!'.format(form.name.data)) # flash a message on the screen
+        flash('{}, you are now signed-up to provide lab Friday lunch!'.format(format_name(str(form.name.data)))) # flash a message on the screen
         return redirect(url_for('index')) # return home
     return render_template('index.html', form=form, items=items, counts=counts) # render page
 
