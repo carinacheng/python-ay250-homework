@@ -1,0 +1,21 @@
+This is my final project for Ay250: Python for Data Science.
+
+The two lectures I used are:
+    (1) Flask
+    (2) Databases
+
+Description: I used a combination of Flask, jinja2, python, html, and css to build a web application to track lunch-hosters for my research group's weekly Friday lunches. This web app allows users to sign-up to provide lunch for a specific date. Some of its features are:
+    -flashes a message on the screen when a user has successfully signed up
+    -adds the user to the left table, and orders those entries by dates so the most recent date is at the top
+    -highlights the closest upcoming lunch with a green arrow on the table, if there is one
+    -tallies up how many lunches each person has provided in a table on the right
+    -details out instructions on being a lunch-hoster on a separate page
+
+I created a free Google cloud account to host the webpage, and it can be accessed here: http://35.184.149.198/
+I deployed it using a Docker container.
+
+The bare-bones version of the webpage launched publicly (aka to my lab) on 4/18/18, but I've been making updates since then too.
+
+Thanks!
+
+
