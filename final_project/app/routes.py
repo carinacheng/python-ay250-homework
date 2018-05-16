@@ -46,16 +46,12 @@ def parse_counts(items):
     Input: list of items from parse_db function
     Output: dictionary with keys "names" and values "counts"
     """
-    names = ['Adrian Liu', 'Carina Cheng', 'Zaki Ali', 'Morgan Presley', 'Josh Dillon', 'Nipanjana Patra', 
-            'Nick Kern', 'Deepthi Gorthi', 'Jack Hickish', 'Kara Kundert', 'Phil Bull', 'Avery Kim'] # people who should be in the lunch-buying rotation
     names_in_db = [item['name'] for item in items] # people who have signed up in the database
     counts = {}
-    for name in names: counts[name] = 0 # make dictionary where everyone has a count of 0
     for name in names_in_db: # loop through database entries and match them to the table
         name_entry = name.split(' ') # split up name into first and last, if entered that way
-        if name in names: # if the name is already in the counts dictionary XXX names have to match exactly 
-            counts[name] += 1 # increase count
-        else: counts[name] = 1 # if newcomer isn't in the original list, add them and give a count of 1
+        try: counts[name] += 1 # increase count
+        except: counts[name] = 1 # if newcomer isn't in the original list, add them and give a count of 1
     counts = collections.OrderedDict(sorted(counts.items())) # order alphabetically
     return counts
 
